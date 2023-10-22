@@ -12,7 +12,6 @@ from roboflow import Roboflow
 
 app = Flask(__name__)
 app.secret_key = "skin"
-photos = UploadSet('photos', IMAGES)
 
 def logged_in():
     return "user" in session
@@ -39,7 +38,7 @@ def test():
         project = rf.workspace().project("melanoma-cancer")
         model = project.version(1).model
 
-        model.predict(inputVal, confidence=40, overlap=30).save("prediction.jpg")
+        model.predict(str(inputVal), confidence=40, overlap=30).save("prediction.jpg")
         return redirect("/results")
     
     else:
