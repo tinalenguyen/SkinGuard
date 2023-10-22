@@ -31,10 +31,19 @@
         </div>
     </nav>
 
-    <div class="container text-center mt-5">
-        <h1>Hello!</h1>
-        <p>Welcome to our website. At SkinGuard, we aim to protect everyone's skin from melanomas and such conditions.</p>
-        <a href="/test" class="btn btn-primary btn-lg">Get Started</a>
+    <div class="container text-center mx-auto mt-5">
+            <h1>Please upload a picture of your face for scanning.</h1>
+            <p>After an import, we will scan for possible skin conditions.</p>
+            <form>
+                    <div class="form-group">
+                        <div class="form-group text-center">
+                            <label for="fileInput">Choose file</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary mx-auto d-block">Import</button>
+                        <div class="form-group text-center mx-auto d-block">
+                            <input type="file" class="form-control-file" id="fileInput" name="image">
+                        </div>
+                </form>
     </div>
 
     
@@ -44,5 +53,12 @@
             <p>&copy; SkinGuard 2023</p>
         </div>
     </footer>
+
+    <script>
+        function myFunction() {
+            var inputVal = document.getElementById("myInput").value;
+            window.location.href = "/submit?inputVal=" + inputVal;
+        }
+    </script>
 </body>
 </html>
